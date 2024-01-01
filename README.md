@@ -1,10 +1,14 @@
 # Login-Auth
 This project uses Django framework to make  a login portal with confirmation email.
 Deployment is done using Docker and then AWS ECS
-<img width="826" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/522d135f-38e5-45c5-b04a-68b2afd1ed05">
+<img width="1120" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/53395888-f1e8-42f9-9be9-5e9b742fdf03">
+<img width="1093" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/ede61484-6034-462b-885d-900a369b6129">
+<img width="246" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/a65d08fe-3d11-46a0-9ff6-209340cf3242">
 
-<img width="826" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/f34db044-987e-4de7-aa32-8b4effa952ab">
-<img width="826" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/0b434abf-a9c2-4966-bdaa-a8f81850c6fe">
 
-<img width="826" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/ddbface0-db84-43ae-8ebe-14a672ddbd8f">
-<img width="826" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/74ad442f-8059-4e3a-bd25-3421c190a5a2">
+<img width="1101" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/d4e46d93-4d77-488f-8890-4f22c7a92aab">
+
+<img width="1101" alt="image" src="https://github.com/Regan17/Login-Auth/assets/100128424/5e2bcd12-2f1d-4e8b-9aac-7e3a42ef7294">
+
+![image](https://github.com/Regan17/Login-Auth/assets/100128424/d04fd304-7ba8-44a4-91e3-3fd8dc9c5c6d)
+
