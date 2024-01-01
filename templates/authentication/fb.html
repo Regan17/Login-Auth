@@ -13,7 +13,7 @@
             color: #ffffff;
             line-height: 1.6;
         }
-
+        
         header {
             background-color: #1DB954;
             color: #ffffff;
@@ -120,6 +120,22 @@
                 width: 100%;
             }
         }
+        .logout-button {
+            background-color: #1DB954;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 20px; /* Adjusted for more rounded edges */
+            text-decoration: none;
+            margin: 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        .logout-button:hover {
+            background-color: #1ed760;
+        }
     </style>
     <title>Chirag Arora's Spotify-themed Portfolio</title>
 </head>
@@ -129,6 +145,9 @@
         <p>Email: chiraghsp17@gmail.com</p>
         <p>Mobile: +91 9464700145</p>
         <p>LinkedIn: <a href="www.linkedin.com/in/chirag-arora-a53152233/" target="_blank">Chirag Arora</a></p>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'signout' %}" class="logout-button">Logout</a>
+        {% endif %}
     </header>
 
     <section id="education">

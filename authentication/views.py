@@ -1,12 +1,15 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate,login,logout
-from djangoo import settings
+from django.contrib.auth import authenticate, login, logout
+from django.conf import settings
 from django.core.mail import send_mail
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def home(request):
+    if request.user.is_authenticated:
+        return redirect('fb')
     return render(request,"authentication/index.html")
 def signup(request):
         if request.method=="POST":
@@ -52,24 +55,33 @@ def signup(request):
             return redirect('signin')
         return render(request,"authentication/signup.html")
 def signin(request):
-    if request.method=="POST":
-            username=request.POST['username']
-            pass1=request.POST['password']
-            user=authenticate(username=username,password=pass1)
-            if user is not None:
-                login(request,user)
-                messages.success(request,'Logged innn')
-                return render(request,"authentication/fb.html")
+    # If the user is already logged in, redirect to 'fb.html'
+    if request.user.is_authenticated:
+        return redirect('fb')
 
-            else:
-                messages.error(request,'Username or password incorrect!')
-                return redirect('signin')
-    return render(request,"authentication/signin.html")
+    # If it's a POST request, attempt to authenticate the user
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Logged in successfully')
+            return render(request, "authentication/fb.html")
+        else:
+            messages.error(request, 'Username or password incorrect!')
+            return redirect('signin')
 
     return render(request,"authentication/signin.html")
 def signout(request):
-    logout(request)
-    messages.success(request, "Logged Out Successfully!!")
+    # Check if the user is authenticated
+    if request.user.is_authenticated:
+        logout(request)
+        messages.success(request, "Logged Out Successfully!!")
+    else:
+        messages.warning(request, "You are not signed in. Sign in first to logout.")
+
     return redirect('home')
 def fb(request):
     return render(request,"authentication/fb.html")
