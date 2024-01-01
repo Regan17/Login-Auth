@@ -1,7 +1,6 @@
 # Login-Auth
 This project uses Django framework to make  a login portal with confirmation email.
 Deployment is done using Docker and then AWS ECS
-To open the project copy and paste this link address in a new tab
 
 Link: http://34.229.254.148:8000/
 
